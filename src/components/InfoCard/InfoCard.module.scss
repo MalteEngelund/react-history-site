@@ -1,0 +1,12 @@
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+
+.infoCard:nth-child(odd) {
+  align-self: flex-start;
+}
+.infoCard:nth-child(even) {
+  align-self: flex-end;
+}

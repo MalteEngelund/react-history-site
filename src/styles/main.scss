@@ -1,0 +1,13 @@
+@use './globals.scss';
+
+html {
+  background-color: globals.$black1;
+  color: globals.$white;
+}
+
+a {
+  text-decoration: none;
+}
+ul  {
+  list-style: none;
+}

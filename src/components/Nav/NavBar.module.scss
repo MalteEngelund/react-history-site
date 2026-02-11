@@ -1,0 +1,41 @@
+@use '../../styles/globals.scss';
+
+
+.navBarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 150px 0;
+}
+
+.navBar {
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100px;
+    li {
+      color: globals.$golden-brown;
+      a {
+        color: globals.$golden-brown;
+        font-family: globals.$primary-font;
+        font-size: globals.$font-size-l;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navBarContainer {
+    padding: 100px 0;
+  }
+  .navBar {
+    ul {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+}
