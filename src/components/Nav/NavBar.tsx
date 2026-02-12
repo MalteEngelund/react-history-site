@@ -25,7 +25,9 @@ export function NavBar(props: NavBarProps) {
           {linksNav.map((item) => {
             return (
               <li key={item.path}>
-              <NavLink to={item.path}>{item.name.toUpperCase()}</NavLink>
+              <NavLink to={item.path}
+              className={({ isActive }) => isActive ? style.active : undefined}
+              >{item.name.toUpperCase()}</NavLink>
               </li>
             )
           })}

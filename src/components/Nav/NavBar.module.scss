@@ -22,6 +22,12 @@
         color: globals.$golden-brown;
         font-family: globals.$primary-font;
         font-size: globals.$font-size-l;
+        
+      }
+      .active {
+        position: relative;
+        top: -40px;
+        text-decoration: underline;
       }
     }
   }
@@ -39,3 +45,4 @@
     }
   }
 }
+

@@ -3,6 +3,8 @@ import { useFetch } from "../hooks/useFetch/useFetch";
 import { InfoCard } from "../components/InfoCard/InfoCard";
 import { Header } from "../components/Header/Header";
 import { NavBar } from "../components/Nav/NavBar";
+import style from './ByDatePage.module.scss'
+import { TimelineV2 } from "../components/TimelineV2/TimelineV2";
 
 export function ByDatePage() {
   const today = new Date();
@@ -20,16 +22,16 @@ export function ByDatePage() {
 
   return (
     <>
-    <Header title={`On: ${date}/${month}`} text="What happened on this day - Here you can enter a specific date to get only events that happened on this date" />
-    <NavBar linksNav={links}/>
-      <input
+    <Header title={<>On: <input
         type="number"
         min="1"
         max="31"
         value={date}
         onChange={e => setDate(Number(e.target.value))}
         placeholder="Date"
+        className={style.inputStyle}  
       />
+      /
       <input
         type="number"
         min="1"
@@ -37,10 +39,15 @@ export function ByDatePage() {
         value={month}
         onChange={e => setMonth(Number(e.target.value))}
         placeholder="Month"
-      />
+        className={style.inputStyle}
+      /></>} text="What happened on this day - Here you can enter a specific date to get only events that happened on this date" />
+    <NavBar linksNav={links}/>
+      
+      <TimelineV2>
       {data?.data?.Events?.slice(0, 10).map((event, idx) => (
-        <InfoCard key={idx} year={event.year} text={event.text} date={date} month={month} />
+        <InfoCard key={idx} year={event.year} text={event.text} date={date} month={month} link={event.links[0]?.link || "#"} />
       ))}
+      </TimelineV2>
     </>
   );
 }

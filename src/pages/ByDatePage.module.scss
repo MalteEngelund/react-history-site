@@ -1,0 +1,37 @@
+@use '../styles/globals.scss';
+
+.inputStyle {
+  width: 70px;
+  border: none;
+  font-size: 48px;
+  font-family: globals.$header-font;
+  background-color: globals.$black1;
+  color: globals.$light-brown;
+  text-decoration: underline;
+  &:focus {
+    outline: none;
+    border-color: globals.$golden-brown;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.inputYearStyle {
+  width: 120px;
+  border: none;
+  font-size: 48px;
+  font-family: globals.$header-font;
+  background-color: globals.$black1;
+  color: globals.$light-brown;
+  text-decoration: underline;
+  &:focus {
+    outline: none;
+    border-color: globals.$golden-brown;
+  }
+}

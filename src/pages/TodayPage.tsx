@@ -1,6 +1,7 @@
 import { Header } from "../components/Header/Header"
 import { InfoCard } from "../components/InfoCard/InfoCard"
 import { NavBar } from "../components/Nav/NavBar"
+import { TimelineV2 } from "../components/TimelineV2/TimelineV2"
 import { useFetch } from "../hooks/useFetch/useFetch"
 
 export function TodayPage() {
@@ -25,11 +26,11 @@ export function TodayPage() {
       <Header title='On This Day' text="What happened on this day - historical events, deaths and births thoughout time" />
       <NavBar linksNav={links}/>
 
-    <div style={{display: 'flex', flexDirection: 'column', gap: '20px', width: '100%'}}>
+    <TimelineV2>
     {data?.data?.Events?.slice(0, 10).map((event, idx) => (
       <InfoCard key={idx} year={event.year} text={event.text} date={date} month={month} link={event.links[0]?.link} />
     ))}
-    </div>
+    </TimelineV2>
     </>
   )
 }
